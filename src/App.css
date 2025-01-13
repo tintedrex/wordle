@@ -32,6 +32,7 @@ div {
 }
 
 span {
+  margin: 5px;
   font-size: 24px;
   padding: 10px;
   border: 1px solid #000;

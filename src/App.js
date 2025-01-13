@@ -101,11 +101,14 @@ function App() {
     if (e.key === 'Enter') {
       if (currentGuess.length === 3) {
         addNewGuess();
+        setCurrentGuess(currentGuess.slice(0, -3));
       }
-    } else if (e.key === 'Backspace') {
-      setCurrentGuess(currentGuess.slice(0, -1));
-    } else if (/[a-zA-Z]/.test(e.key) && currentGuess.length < 3) {
-      setCurrentGuess(currentGuess + e.key.toLowerCase());
+  }
+     else if (e.key === 'Backspace') {
+      setCurrentGuess(currentGuess.slice(0, -3));
+    }
+    else if (/[a-zA-Z]/.test(e.key) && currentGuess.length < 3) {
+    setCurrentGuess(currentGuess + e.key.toLowerCase());
     }
   };
 
