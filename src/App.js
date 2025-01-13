@@ -124,15 +124,15 @@ function App() {
   };
 
   const getColor = (guessLetter, index) => {
-    if (!solution) return 'black';
+    if (!solution) return 'white';
 
     if (guessLetter === solution[index]) {
-      return 'red';
+      return 'lightgreen';
     }
     if (solution.includes(guessLetter)) {
-      return 'blue';
+      return 'yellow';
     }
-    return 'black';
+    return 'lightgrey';
   };
 
   useEffect(() => {
@@ -149,7 +149,7 @@ function App() {
         {guesses.map((guess) => (
           <div>
             {guess.split('').map((letter, i) => (
-              <span key={i} style={{color: getColor(letter, i)}}>
+              <span key={i} style={{backgroundColor : getColor(letter, i)}}>
                 {letter}
               </span>
             ))}
